@@ -11,8 +11,7 @@ public class testCuentaBancaria {
 		CuentaSueldo miCuentaSueldo = new CuentaSueldo(1000d);
 		miCuentaSueldo.depositar(3000d);
 		miCuentaSueldo.extraer(3000d);
-		Double saldo = miCuentaSueldo.getSaldo();
-		assertEquals(1000d,saldo,0.01);
+		assertEquals(1000d,miCuentaSueldo.getSaldo(),0.01);
 	}
 
 	@Test
@@ -20,16 +19,13 @@ public class testCuentaBancaria {
 		CajaDeAhorro miCajaDeAhorro = new CajaDeAhorro(1000d,6);
 		miCajaDeAhorro.depositar(3000d);
 		miCajaDeAhorro.extraer(3000d);
-		Double saldo = miCajaDeAhorro.getSaldo();
-		assertEquals(994d,saldo,0.01);
+		assertEquals(994d,miCajaDeAhorro.getSaldo(),0.01);
 	}
-	//test a reparar
 	@Test
 	public void testQueDepositaYExtraeDineroDeCuentaCorriente() {
-		CuentaCorriente miCuentaCorriente = new CuentaCorriente(100d,100d);
+		CuentaCorriente miCuentaCorriente = new CuentaCorriente(100d);
 		miCuentaCorriente.extraer(150d);
-		Double saldo = miCuentaCorriente.getSaldo();
-		assertEquals(47.5d,saldo,0.01);
+		assertEquals(47.5d,miCuentaCorriente.getSaldo(),0.01);
 	}
 
 }

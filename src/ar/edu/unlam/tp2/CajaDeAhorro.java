@@ -18,14 +18,10 @@ public class CajaDeAhorro extends CuentaBancaria {
 	@Override
 	public Double extraer(Double importeExtraccion){
 		if(importeExtraccion <= super.getSaldo() && cantidadDeExtracciones<=5){
-			Double restoEnCuenta = super.getSaldo();
-			restoEnCuenta -= importeExtraccion;
-			super.setSaldo(restoEnCuenta);
+			super.setSaldo(super.getSaldo() - importeExtraccion);
 		}
 		else if(super.getSaldo()>=importeExtraccion && cantidadDeExtracciones>=6){
-			Double restoEnCuenta = super.getSaldo();
-			restoEnCuenta -= (importeExtraccion + 6);
-			super.setSaldo(restoEnCuenta);
+			super.setSaldo(super.getSaldo() - (importeExtraccion + 6));
 		}
 		else {
 			System.out.println("saldo insuficiente");

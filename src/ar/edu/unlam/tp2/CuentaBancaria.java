@@ -10,9 +10,7 @@ public class CuentaBancaria {
 	public Double extraer(Double importeExtraccion){
 		
 		if(importeExtraccion <= this.getSaldo()){
-			Double restoEnCuenta = this.getSaldo();
-			restoEnCuenta -= importeExtraccion;
-			this.setSaldo(restoEnCuenta);
+			this.saldo -= importeExtraccion;
 		}
 	else {
 			System.out.println("saldo insuficiente");
@@ -21,7 +19,7 @@ public class CuentaBancaria {
 	}
 	
 	public Double depositar(Double deposito){
-		this.saldo = saldo + deposito;
+		this.saldo +=  deposito;
 		return saldo;
 	}
 

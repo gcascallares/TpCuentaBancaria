@@ -9,9 +9,7 @@ public class CuentaSueldo extends CuentaBancaria {
 	public Double extraer(Double importeExtraccion){
 	
 		if(importeExtraccion <= super.getSaldo()){
-			Double restoEnCuenta = super.getSaldo();
-			restoEnCuenta -= importeExtraccion;
-			super.setSaldo(restoEnCuenta);
+			super.setSaldo(super.getSaldo() - importeExtraccion);
 		}
 	else {
 			System.out.println("saldo insuficiente");
